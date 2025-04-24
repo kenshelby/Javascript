@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Navbar</title>
     <style>
-    nav ul {
-        gap: 20px;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-    }
+        nav ul {
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
     </style>
 </head>
+
 <body>
 
     <nav>
@@ -25,5 +27,21 @@
         </ul>
     </nav>
 
+    <div id="container1">
+        <input type="text" id="nameInput" placeholder="Enter your name" />
+        <input type="number" id="ageInput" placeholder="Enter your age" />
+    </div>
+    <div id="container2"></div>
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" />
+    </div>
+    <div id="container3"></div>
+    <input type="checkbox" id="togglePassword" /> Show Password
+    </div>
+    <div id="container4button"></div>
+    <button onclick="createUser()">Submit</button>
+    </div>
+
 </body>
+
 </html>

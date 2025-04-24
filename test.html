@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Right Side</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .left-pane {
+      flex: 1;
+      background-color: #f8f8f8;
+    }
+
+    .divider {
+      width: 2px;
+      background-color: #ccc;
+    }
+
+    .right-pane {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+    }
+
+    .login-box {
+      background-color: #ffffff;
+      padding: 30px 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    .login-box input {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .login-box button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="left-pane">
+      <!-- You can put an image, welcome text, or just leave it blank -->
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="right-pane">
+      <div class="login-box">
+        <h2>Login</h2>
+        <input type="text" placeholder="Enter your name" />
+        <input type="number" placeholder="Enter your age" />
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" />
+        <input type="checkbox" id="togglePassword" /> Show Password
+        <br><br>
+        <button>Submit</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

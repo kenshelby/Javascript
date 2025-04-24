@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Password Toggle</title>
+  <style>
+    .password-container {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .password-container input {
+      padding-right: 40px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .toggle-icon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="password-container">
+  <input type="password" id="passwordField" placeholder="Password" />
+  <span id="togglePassword" class="toggle-icon">
+    <!-- Eye icon -->
+    <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+      viewBox="0 0 16 16">
+      <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zm-8 4a4 4 0 1 1 0-8 4 4 0 0 1 0 8z" />
+      <path d="M8 5a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
+    </svg>
+    <!-- Eye-slash icon -->
+    <svg id="eyeSlashIcon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+      fill="currentColor" viewBox="0 0 16 16">
+      <path
+        d="M13.359 11.238l1.387 1.387a.5.5 0 0 1-.708.708l-1.387-1.387a8.21 8.21 0 0 1-4.651 1.554C3 13.5 0 8 0 8a15.31 15.31 0 0 1 2.527-3.243L1.146 3.146a.5.5 0 1 1 .708-.708l12 12a.5.5 0 0 1-.708.708l-1.232-1.232a.5.5 0 0 1-.267-.676zM11.46 9.34a3.5 3.5 0 0 0-4.8-4.8l4.8 4.8z" />
+    </svg>
+  </span>
+</div>
+
+<script>
+  const passwordInput = document.getElementById('passwordField');
+  const togglePassword = document.getElementById('togglePassword');
+  const eyeIcon = document.getElementById('eyeIcon');
+  const eyeSlashIcon = document.getElementById('eyeSlashIcon');
+
+  togglePassword.addEventListener('click', () => {
+    const isPasswordVisible = passwordInput.type === 'text';
+    passwordInput.type = isPasswordVisible ? 'password' : 'text';
+
+    eyeIcon.classList.toggle('hidden', !isPasswordVisible);
+    eyeSlashIcon.classList.toggle('hidden', isPasswordVisible);
+  });
+</script>
+
+</body>
+</html>
