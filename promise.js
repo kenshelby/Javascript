@@ -52,3 +52,38 @@ async function prom_func(params) {
 }
 
 prom_func();
+
+// response@@@@@@@
+
+function p11() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve("p11 solved");
+      }, 1000);
+    });
+  }
+  
+  function p2() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve("p2 solved");
+      }, 2000);
+    });
+  }
+  
+  function p3() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve("p3 solved");
+      }, 3000);
+    });
+  }
+  
+  async function prom_func() {
+    // Call the functions to get promises
+    const res = await Promise.all([p11(), p2(), p3()]);
+    console.log(res); // ["p11 solved", "p2 solved", "p3 solved"]
+  }
+  
+  prom_func();
+  
