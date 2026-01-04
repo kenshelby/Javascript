@@ -97,5 +97,13 @@ function fetchUserData(){
 }
     fetchUserData().then(output => {
         console.log(output.name);
-        return new Promise((resolve, reject) => {setTimeout(()=>{resolve(["post1", "post2", "post3"])}, 1000)});
-        }).then(arr => console.log(arr[0], arr[1], arr[2])).catch(error => console.log("Error caught:",error)).finally(() => console.log("Operation complete"))
+        return new Promise(
+            (resolve, reject) => {
+                setTimeout(()=>{
+                        resolve(["post1", "post2", "post3"])
+                    }, 1000)
+                });
+        }).then(arr => console.log(arr[0], arr[1], arr[2]))
+        .catch(error => console.log("Error caught:",error))
+        .finally(() => console.log("Operation complete")
+    )
