@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <video id="video" width="640" height="480" autoplay playsinline></video>
+    <button id="snap">Take Photo</button>
+    <canvas id="canvas" width="640" height="480" style="display:none;"></canvas>
+    <img id="photo" alt="The captured image">
+    <script>
+        const video = document.getElementById('video');
+const canvas = document.getElementById('canvas');
+const snapButton = document.getElementById('snap');
+const photo = document.getElementById('photo');
+const context = canvas.getContext('2d');
+
+// 1. Request camera access
+navigator.mediaDevices.getUserMedia({ video: true, audio: false })
+    .then(function(stream) {
+        video.srcObject = stream;
+        video.play();
+    })
+    .catch(function(err) {
+        console.error("An error occurred: " + err);
+    });
+
+// 2. Capture the photo when the button is clicked
+snapButton.addEventListener('click', function() {
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+    // Convert the canvas content to a data URL and display in the img tag
+    const imageDataUrl = canvas.toDataURL('image/png');
+    photo.src = imageDataUrl;
+    // You can also stop the video stream after taking the photo if needed
+    // stream.getTracks().forEach(track => track.stop()); 
+});
+    </script>
+</body>
+</html>
